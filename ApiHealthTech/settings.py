@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
+APPS_DJANGO = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,6 +38,20 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+
+SUB_APPS_DJANGO = [
+    # 'Apps.Orden_remision',
+    'Apps.agenda',
+    'Apps.share.medico',
+    # 'Apps.Usuario'
+    'Apps.share.especialidad',
+    'Apps.share.consultorio'
+]
+
+
+INSTALLED_APPS = APPS_DJANGO + SUB_APPS_DJANGO
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -75,11 +89,14 @@ WSGI_APPLICATION = 'ApiHealthTech.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'DB_HealthTech',
+        'USER': 'root',
+        'PASSWORD': '3046552218',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
