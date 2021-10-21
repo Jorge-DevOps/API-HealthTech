@@ -42,13 +42,14 @@ APPS_DJANGO = [
 
 SUB_APPS_DJANGO = [
     # 'Apps.Orden_remision',
+    'Apps.usersApi',
     'Apps.agenda',
     'Apps.share.medico',
     'Apps.share.especialidad',
     'Apps.share.consultorio',
     'Apps.share.horarioMedico',
     'Apps.share.perfil',
-    'Apps.usuario'
+    'Apps.usuario',
 
 ]
 
