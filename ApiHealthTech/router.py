@@ -3,7 +3,7 @@ from rest_framework import routers
 
 router = routers.DefaultRouter()
 
-# Registrar las rutas
+#Registrar las rutas
 router.register('medico', MedicoViewset)
 
 # Localhost:p/api/medico/5
