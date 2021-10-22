@@ -17,3 +17,8 @@ class Medico(models.Model):
     class Meta:
         managed = False
         db_table = 'medico'
+
+    # Create /Insert / Add -POST
+    # Reatrieve /Fecth -GET 
+    # Update /Edit - PUT
+    # Delete / Remove -DELETE

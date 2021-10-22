@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from . import models
+from.models import horarioMedico
 
-class PostSerializers(serializers.ModelSerializer):
+class HorarioMedicoSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.horarioMedico  
-        exclude = ['is_removed', 'created', 'modified']
+        model = horarioMedico
+        fields = '__all__'
