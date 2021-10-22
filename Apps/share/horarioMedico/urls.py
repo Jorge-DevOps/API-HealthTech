@@ -5,5 +5,6 @@ from . import views
 app_name="horarioMedico_app"
 
 urlpatterns = [
-    path('index3', views.post, name="index3"),
+    path('postHorarioMedico', views.post, name="postHorarioMedico"),
+    path('postHorarioMedico2', views.Post_ApiView, name="postHorarioMedico2"),
 ]

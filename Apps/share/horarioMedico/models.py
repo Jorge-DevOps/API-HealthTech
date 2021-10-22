@@ -4,8 +4,8 @@ from . import forms
 
 class horarioMedico(models.Model):
     id_horario_medico = models.AutoField(primary_key=True)
-    hora_inicio = models.TimeField()
-    hora_fin = models.TimeField()
+    hora_inicio       = models.TimeField()
+    hora_fin          = models.TimeField()
 
     class Meta:
         managed = False
