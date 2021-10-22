@@ -37,7 +37,7 @@ APPS_DJANGO = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework'
+    'rest_framework',
 ]
 
 
@@ -97,7 +97,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'health_tech',
         'USER': 'root',
-        'PASSWORD': '990518',
+        'PASSWORD': 'root',
         'HOST': 'localhost',
         'PORT': '3306',
     }
