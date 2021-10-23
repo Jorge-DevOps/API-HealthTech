@@ -39,3 +39,25 @@ ln -s /usr/local/bin/pip /usr/local/bin/pip3
 
 1. Activar entorno virtual
 2. Correr `pip install django -U`
+
+## Librerias
+
+1. Intalar `pip install djangorestframework` 
+2. Intalar `pip install Pillow`
+
+## CONECTAR CON LA API
+
+**horarioMedico**
+
+GET 🎈
+- `http://127.0.0.1:8000/api/horarioMedico/` 
+
+POST 📃
+- `pip install djangorestframework` 
+
+`
+{
+    "hora_inicio": "16:22:00",
+    "hora_fin": "22:22:00"
+} 
+`
