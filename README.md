@@ -92,5 +92,5 @@
 
 
   ```
- Metodo  PUT    --> Actualizar
- Metodo DELETE  --> Eliminar
+Metodo  PUT    --> Actualizar
+Metodo DELETE  --> Eliminar
