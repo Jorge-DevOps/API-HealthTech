@@ -96,12 +96,8 @@ WSGI_APPLICATION = 'ApiHealthTech.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'DB_HealthTech',
-        'USER': 'root',
-        'PASSWORD': '3046552218',
-        'HOST': 'localhost',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
