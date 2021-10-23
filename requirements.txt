@@ -7,7 +7,6 @@ ConfigParser
 Pillow
 gunicorn
 mysql-connector-python
-mysql-server
 gevent --pre
 auto-py-to-exe
 
