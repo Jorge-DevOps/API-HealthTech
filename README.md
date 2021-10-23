@@ -67,6 +67,29 @@ ln -s /usr/local/bin/pip /usr/local/bin/pip3
  } 
  ```
  **API Medico**
-  Metodo GET 🎈
-  Metodo POST 📃
-  Metodo 
+ Metodo GET 🎈 --> Coultar
+ ```
+  /api/medico/
+ ```
+ Metodo POST 📃 --> Crear
+ ```
+ }
+        "id_usuario": 10,
+        "tipo_documento": "cc",
+        "numero_documento": "10234757",
+        "nombre_usuario": "Fabian Gonzales XD",
+        "contrasena": "990518",
+        "correo": "amata@gmail.com",
+        "telefono": "20928937",
+        "sexo": "M",
+        "fecha_nacimiento": "2021-10-06",
+        "grupo_sanguineo": "+O",
+        "estrato": 3,
+        "estado_civil": "soltero",
+        "id_perfil": 3,
+        "id_agenda": 5,
+        "id_especialidad": 2
+    }
+  ```
+ Metodo  PUT    --> Actualizar
+ Metodo DELETE  --> Eliminar
