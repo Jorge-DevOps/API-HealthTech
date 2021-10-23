@@ -5,3 +5,4 @@ MySQL-python
 Pillow
 gevent --pre
 auto-py-to-exe
+mysqlclient
