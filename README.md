@@ -53,8 +53,8 @@
         "id_especialidad": 2
     }
   ```
- Metodo  PUT    --> Actualizar
- Metodo DELETE  --> Eliminar
+Metodo  PUT    --> Actualizar
+Metodo DELETE  --> Eliminar
  
  
  -----------------------------------------------------
