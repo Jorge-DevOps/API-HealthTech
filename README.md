@@ -93,7 +93,6 @@ Metodo DELETE  --> Eliminar
 
 
   ```
-Metodo  PUT    --> Actualizar
 Metodo DELETE  --> Eliminar
 ```
 /api/medico/id
@@ -102,3 +101,4 @@ Ejemplo:
 http://localhost:8000/api/medico/10/
 Status: 204
 ```
+Metodo  PUT    --> Actualizar
