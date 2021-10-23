@@ -49,15 +49,18 @@ ln -s /usr/local/bin/pip /usr/local/bin/pip3
 
 **horarioMedico**
 
-GET 🎈
+Metodo GET 🎈
 ```
-- http://127.0.0.1:8000/api/horarioMedico/
+- api/horarioMedico/
 ```
 
-POST 📃
-```
-- http://127.0.0.1:8000/api/horarioMedico/
+Metodo POST 📃
 
+```
+/api/horarioMedico/
+```
+Ejemplo de Request
+```
 {
     "hora_inicio": "16:22:00",
     "hora_fin": "22:22:00"
