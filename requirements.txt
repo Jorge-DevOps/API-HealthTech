@@ -5,6 +5,7 @@ djangorestframework
 setuptools
 ConfigParser
 collectstatic
+test
 Pillow
 gevent --pre
 auto-py-to-exe
