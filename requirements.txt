@@ -4,6 +4,7 @@ mysqlclient
 djangorestframework
 setuptools
 ConfigParser
+collectstatic
 Pillow
 gevent --pre
 auto-py-to-exe
