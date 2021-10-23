@@ -3,3 +3,5 @@ django-heroku
 djangorestframework
 MySQL-python
 Pillow
+gevent --pre
+auto-py-to-exe
