@@ -73,9 +73,19 @@ Metodo DELETE  --> Eliminar
         "piso": 50
 },
   ```
+
  Metodo  PUT    --> Actualizar
+ ```
+ /api/medico/
+ ```
  Metodo DELETE  --> Eliminar
- 
+ ```
+/api/medico/id
+
+Ejemplo:
+http://localhost:8000/api/medico/10/
+Status: 204
+```
  -----------------------------------------------------
 **API especialidad**
  Metodo GET 🎈 --> Consultar
@@ -94,11 +104,5 @@ Metodo DELETE  --> Eliminar
 
   ```
 Metodo DELETE  --> Eliminar
-```
-/api/medico/id
 
-Ejemplo:
-http://localhost:8000/api/medico/10/
-Status: 204
-```
 Metodo  PUT    --> Actualizar
