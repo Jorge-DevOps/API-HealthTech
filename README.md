@@ -66,3 +66,7 @@ ln -s /usr/local/bin/pip /usr/local/bin/pip3
      "hora_fin": "22:22:00"
  } 
  ```
+ **API Medico**
+  Metodo GET 🎈
+  Metodo POST 📃
+  Metodo 
