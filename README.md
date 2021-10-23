@@ -54,8 +54,17 @@
     }
   ```
 Metodo  PUT    --> Actualizar
+ ```
+ /api/medico/
+ ```
 Metodo DELETE  --> Eliminar
- 
+  ```
+/api/medico/id
+
+Ejemplo:
+http://localhost:8000/api/medico/10/
+Status: 204
+```
  
  -----------------------------------------------------
 **API Consultorios**
@@ -75,17 +84,9 @@ Metodo DELETE  --> Eliminar
   ```
 
  Metodo  PUT    --> Actualizar
- ```
- /api/medico/
- ```
- Metodo DELETE  --> Eliminar
- ```
-/api/medico/id
 
-Ejemplo:
-http://localhost:8000/api/medico/10/
-Status: 204
-```
+ Metodo DELETE  --> Eliminar
+
  -----------------------------------------------------
 **API especialidad**
  Metodo GET 🎈 --> Consultar
