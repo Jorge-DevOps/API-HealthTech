@@ -50,14 +50,16 @@ ln -s /usr/local/bin/pip /usr/local/bin/pip3
 **horarioMedico**
 
 GET 🎈
-- `http://127.0.0.1:8000/api/horarioMedico/` 
+```
+- http://127.0.0.1:8000/api/horarioMedico/
+```
 
 POST 📃
-- `pip install djangorestframework` 
+```
+- http://127.0.0.1:8000/api/horarioMedico/
 
-`
 {
     "hora_inicio": "16:22:00",
     "hora_fin": "22:22:00"
 } 
-`
+```
