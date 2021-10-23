@@ -47,22 +47,22 @@ ln -s /usr/local/bin/pip /usr/local/bin/pip3
 
 ## CONECTAR CON LA API
 
-    **API horarioMedico**
+ **API horarioMedico**
 
-    Metodo GET 🎈
-    ```
-    /api/horarioMedico/
-    ```
+ Metodo GET 🎈
+ ```
+ /api/horarioMedico/
+ ```
 
-    Metodo POST 📃
+ Metodo POST 📃
 
-    ```
-    /api/horarioMedico/
-    ```
-    Ejemplo de Request
-    ```
-    {
-        "hora_inicio": "16:22:00",
-        "hora_fin": "22:22:00"
-    } 
-    ```
+ ```
+ /api/horarioMedico/
+ ```
+ Ejemplo de Request
+ ```
+ {
+     "hora_inicio": "16:22:00",
+     "hora_fin": "22:22:00"
+ } 
+ ```
