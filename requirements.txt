@@ -6,7 +6,6 @@ setuptools
 ConfigParser
 Pillow
 gunicorn
-mysql-server
 mysql-connector-python==1.0.12
 gevent --pre
 auto-py-to-exe
