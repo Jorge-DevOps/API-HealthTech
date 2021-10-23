@@ -2,7 +2,7 @@ django
 django-heroku
 mysqlclient
 djangorestframework
--U setuptools
+setuptools
 MySQL-python
 Pillow
 gevent --pre
