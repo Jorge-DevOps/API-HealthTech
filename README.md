@@ -75,6 +75,7 @@ Metodo DELETE  --> Eliminar
   ```
  Metodo  PUT    --> Actualizar
  Metodo DELETE  --> Eliminar
+ 
  -----------------------------------------------------
 **API especialidad**
  Metodo GET 🎈 --> Consultar
