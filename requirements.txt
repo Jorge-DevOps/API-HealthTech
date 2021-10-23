@@ -5,6 +5,8 @@ djangorestframework
 setuptools
 ConfigParser
 Pillow
+gunicorn
+mysql-server
 gevent --pre
 auto-py-to-exe
 
