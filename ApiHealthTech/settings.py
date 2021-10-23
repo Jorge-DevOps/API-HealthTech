@@ -40,6 +40,7 @@ APPS_DJANGO = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 'django_extensions'
 ]
 
 
@@ -53,11 +54,12 @@ SUB_APPS_DJANGO = [
     'Apps.share.horarioMedico',
     'Apps.share.perfil',
     'Apps.usuario',
-
+]
+THIRD_PARTY_APPS = [
+    'rest_framework'
 ]
 
-
-INSTALLED_APPS = APPS_DJANGO + SUB_APPS_DJANGO
+INSTALLED_APPS = APPS_DJANGO + SUB_APPS_DJANGO + THIRD_PARTY_APPS
 
 
 MIDDLEWARE = [
@@ -97,11 +99,11 @@ WSGI_APPLICATION = 'ApiHealthTech.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'health_tech',
+        'NAME': 'DB_HealthTech',
         'USER': 'root',
-        'PASSWORD': 'root',
+        'PASSWORD': '3046552218',
         'HOST': 'localhost',
-        'PORT': '3306',
+        'PORT': '',
     }
 }
 
