@@ -10,6 +10,7 @@ router = routers.DefaultRouter()
 router.register('medico', MedicoViewset)
 router.register('especialidad', EspecialidadViewset)
 router.register('consultorio', ConsultorioViewset)
+router.register('horarioMedico', HorarioMedicoView)
 
 # Localhost:p/api/medico/5
 # GET, POST, UPDATE , DELETE
