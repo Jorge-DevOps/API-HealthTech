@@ -1,6 +1,7 @@
 from Apps.share.medico.viewsets import MedicoViewset
 from Apps.share.especialidad.viewsets import EspecialidadViewset
 from Apps.share.consultorio.viewsets import ConsultorioViewset
+from Apps.share.horarioMedico.views import HorarioMedicoView
 
 from rest_framework import routers
 
