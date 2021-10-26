@@ -96,9 +96,9 @@ WSGI_APPLICATION = 'ApiHealthTech.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'DB_HealthTech',
+        'NAME': 'health_tech',
         'USER': 'root',
-        'PASSWORD': '3046552218',
+        'PASSWORD': '990518',
         'HOST': 'localhost',
         'PORT': '',
     }
