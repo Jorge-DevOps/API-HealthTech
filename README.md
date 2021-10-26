@@ -107,3 +107,10 @@ Status: 204
 Metodo DELETE  --> Eliminar
 
 Metodo  PUT    --> Actualizar
+
+```
+-b blocksize
+   Specify the block size, in 512-byte records, for tape drive I/O.
+   As a rule, this argument is only needed when reading from or writing to tape drives,
+   and usually not even then as the default block size of 20 records (10240 bytes) is very common.
+```
