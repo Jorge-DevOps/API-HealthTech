@@ -48,16 +48,17 @@ DEL horarioMedicoDELETE
 https://healt-tech-back.herokuapp.com/api/horarioMedico/<id>/
  ```
  -----------------------------------------------------
- **API Medico**
- Metodo GET 🎈 --> Consultar
+ **API medico**
+
+ POST medico
  ```
-  /api/medico/
+https://healt-tech-back.herokuapp.com/api/medico/
  ```
- Metodo POST 📃 --> Crear
+
+Body raw (json)
  ```
- }
-        "id_usuario": 10,
-        "tipo_documento": "cc",
+{
+       "tipo_documento": "cc",
         "numero_documento": "10234757",
         "nombre_usuario": "Fabian Gonzales XD",
         "contrasena": "990518",
@@ -71,20 +72,44 @@ https://healt-tech-back.herokuapp.com/api/horarioMedico/<id>/
         "id_perfil": 3,
         "id_agenda": 5,
         "id_especialidad": 2
-    }
-  ```
-Metodo  PUT    --> Actualizar
+}
  ```
- /api/medico/
- ```
-Metodo DELETE  --> Eliminar
-  ```
-/api/medico/id
 
-Ejemplo:
-http://localhost:8000/api/medico/10/
-Status: 204
-```
+PUT medico PUT
+ ```
+https://healt-tech-back.herokuapp.com/api/medico/<id>/
+ ```
+
+
+ POST horarioMedicoPOST
+ ```
+https://healt-tech-back.herokuapp.com/api/medico/
+ ```
+
+Bodyraw (json)
+ ```
+{
+        " tipo_documento": "cc",
+        "numero_documento": "10234757",
+        "nombre_usuario": "Fabian Gonzales XD",
+        "contrasena": "990518",
+        "correo": "amata@gmail.com",
+        "telefono": "20928937",
+        "sexo": "M",
+        "fecha_nacimiento": "2021-10-06",
+        "grupo_sanguineo": "+O",
+        "estrato": 3,
+        "estado_civil": "soltero",
+        "id_perfil": 3,
+        "id_agenda": 5,
+        "id_especialidad": 2
+}
+ ```
+
+DEL medicoDELETE
+ ```
+https://healt-tech-back.herokuapp.com/api/medico/<id>/
+ ```
  
  -----------------------------------------------------
 **API Consultorios**
