@@ -7,25 +7,45 @@
 ![image](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
 
 ## CONECTAR CON LA API
+** HealthTech **
 
  **API horarioMedico**
 
- Metodo GET 🎈
+ POST horarioMedicoPOST
  ```
- /api/horarioMedico/
+https://healt-tech-back.herokuapp.com/api/horarioMedico/
  ```
 
- Metodo POST 📃
+Body raw (json)
+ ```
+{
+  "hora_inicio": "16:22:00",
+  "hora_fin": "22:22:00"
+}
+ ```
 
+PUT horarioMedicoPUT
  ```
- /api/horarioMedico/
+https://healt-tech-back.herokuapp.com/api/horarioMedico/<id>/
  ```
- Ejemplo de Request
+
+
+ POST horarioMedicoPOST
  ```
- {
-     "hora_inicio": "16:22:00",
-     "hora_fin": "22:22:00"
- } 
+https://healt-tech-back.herokuapp.com/api/horarioMedico/
+ ```
+
+Bodyraw (json)
+ ```
+{
+  "hora_inicio": "23:22:00",
+  "hora_fin": "11:22:00"
+}
+ ```
+
+DEL horarioMedicoDELETE
+ ```
+https://healt-tech-back.herokuapp.com/api/horarioMedico/<id>/
  ```
  -----------------------------------------------------
  **API Medico**
