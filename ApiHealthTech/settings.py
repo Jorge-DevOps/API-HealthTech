@@ -95,12 +95,12 @@ WSGI_APPLICATION = 'ApiHealthTech.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'DB_HealthTech',
-        'USER': 'root',
-        'PASSWORD': '3046552218',
-        'HOST': 'localhost',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd51krchs9tnaiv',
+        'USER': 'zpztzozngkgzzi',
+        'PASSWORD': 'a2ad0c1cb2f4a514cf3d7ecfdcad4e53b223fb178b9ff7487d27cb745894e55c',
+        'HOST': 'ec2-44-198-215-235.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
