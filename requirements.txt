@@ -1,0 +1,12 @@
+django
+django-heroku
+mysqlclient
+djangorestframework
+setuptools
+ConfigParser
+Pillow
+gunicorn
+mysql-connector-python
+gevent --pre
+auto-py-to-exe
+

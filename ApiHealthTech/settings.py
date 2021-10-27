@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-o7=sgdi^)h!)1g#+s#v#(&@q^f)l@gg!4$%c81v^lttwe^g_6=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['healt-tech-back.herokuapp.com']
 
 
 # Application definition
@@ -95,12 +96,12 @@ WSGI_APPLICATION = 'ApiHealthTech.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'DB_HealthTech',
-        'USER': 'root',
-        'PASSWORD': '3046552218',
-        'HOST': 'localhost',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd51krchs9tnaiv',
+        'USER': 'zpztzozngkgzzi',
+        'PASSWORD': 'a2ad0c1cb2f4a514cf3d7ecfdcad4e53b223fb178b9ff7487d27cb745894e55c',
+        'HOST': 'ec2-44-198-215-235.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
