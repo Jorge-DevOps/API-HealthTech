@@ -54,7 +54,8 @@ SUB_APPS_DJANGO = [
     'Apps.usuario',
 ]
 THIRD_PARTY_APPS = [
-    'rest_framework'
+    'rest_framework',
+    'corsheaders',
 ]
 
 INSTALLED_APPS = APPS_DJANGO + SUB_APPS_DJANGO + THIRD_PARTY_APPS
