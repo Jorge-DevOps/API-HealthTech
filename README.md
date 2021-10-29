@@ -34,7 +34,24 @@ https://healt-tech-back.herokuapp.com/api/horarioMedico/<id>/
  ```
 https://healt-tech-back.herokuapp.com/api/horarioMedico/
  ```
-
+ ```
+ {
+         "tipo_documento": "CC",
+         "numero_documento": "1013688458",
+         "nombre_usuario": "Maruan Enrique:)",
+         "contrasena": "12345",
+         "correo": "maruan02@gmail.com",
+         "telefono": "3015012832",
+         "sexo": "M",
+         "fecha_nacimiento": "1999-10-28",
+         "grupo_sanguineo": "O+",
+         "estrato": 2,
+         "estado_civil": "Soltero",
+         "id_perfil": 1,
+         "id_agenda": 1,
+         "id_especialidad": 1
+ }
+ ```
 Bodyraw (json)
  ```
 {
