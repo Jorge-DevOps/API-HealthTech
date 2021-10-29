@@ -42,6 +42,7 @@ APPS_DJANGO = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     # 'django_extensions'
 ]
 
@@ -58,7 +59,8 @@ SUB_APPS_DJANGO = [
     'Apps.usuario',
 ]
 THIRD_PARTY_APPS = [
-    'rest_framework'
+    'rest_framework',
+    'corsheaders',
 ]
 
 INSTALLED_APPS = APPS_DJANGO + SUB_APPS_DJANGO + THIRD_PARTY_APPS
@@ -72,6 +74,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+]
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
 ]
 
 ROOT_URLCONF = 'ApiHealthTech.urls'
