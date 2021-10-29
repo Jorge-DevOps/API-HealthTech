@@ -69,6 +69,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'ApiHealthTech.urls'
@@ -91,7 +93,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ApiHealthTech.wsgi.application'
 
-
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000/',
+]
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
