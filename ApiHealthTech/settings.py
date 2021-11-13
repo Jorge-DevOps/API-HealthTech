@@ -58,6 +58,7 @@ SUB_APPS_DJANGO = [
     'Apps.share.perfil',
     'Apps.share.administrador',
     'Apps.usuario',
+    'Apps.share.paciente',
 ]
 THIRD_PARTY_APPS = [
     'rest_framework',
