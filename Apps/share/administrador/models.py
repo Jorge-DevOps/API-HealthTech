@@ -1,9 +1,9 @@
 from django.db import models
 
+from Apps.usuario.models import usuario
+
 # Create your models here.
-class Administrador(models.Model):
-    id_usuario = models.OneToOneField(
-        'Usuario', models.DO_NOTHING, db_column='id_usuario', primary_key=True)
+class Administrador(usuario):
 
     class Meta:
         managed = False
