@@ -26,8 +26,8 @@ SECRET_KEY = 'django-insecure-o7=sgdi^)h!)1g#+s#v#(&@q^f)l@gg!4$%c81v^lttwe^g_6=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['healt-tech-back.herokuapp.com']
-
+ALLOWED_HOSTS = ["*"]
+CORS_ORIGIN_ALLOW_ALL=True
 
 # Application definition
 
@@ -38,6 +38,7 @@ APPS_DJANGO = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     # 'django_extensions'
 ]
 
@@ -51,7 +52,9 @@ SUB_APPS_DJANGO = [
     'Apps.share.consultorio',
     'Apps.share.horarioMedico',
     'Apps.share.perfil',
+    'Apps.share.administrador',
     'Apps.usuario',
+    'Apps.share.paciente',
 ]
 THIRD_PARTY_APPS = [
     'rest_framework',
@@ -72,6 +75,10 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
 ]
+
+#CORS_ALLOWED_ORIGINS = [
+#    'http://localhost:3000',
+#]
 
 ROOT_URLCONF = 'ApiHealthTech.urls'
 
