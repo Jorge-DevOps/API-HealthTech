@@ -55,6 +55,7 @@ SUB_APPS_DJANGO = [
     'Apps.share.administrador',
     'Apps.usuario',
     'Apps.share.paciente',
+    'Apps.horario',
 ]
 THIRD_PARTY_APPS = [
     'rest_framework',
@@ -146,6 +147,10 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+
+
+
 
 
 # Static files (CSS, JavaScript, Images)
