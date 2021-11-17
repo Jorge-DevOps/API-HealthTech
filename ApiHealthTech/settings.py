@@ -26,12 +26,8 @@ SECRET_KEY = 'django-insecure-o7=sgdi^)h!)1g#+s#v#(&@q^f)l@gg!4$%c81v^lttwe^g_6=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    'healt-tech-back.herokuapp.com',
-    '127.0.0.1:8000',
-    '127.0.0.1',
-]
-
+ALLOWED_HOSTS = ["*"]
+CORS_ORIGIN_ALLOW_ALL=True
 
 # Application definition
 
@@ -80,9 +76,9 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',
-]
+#CORS_ALLOWED_ORIGINS = [
+#    'http://localhost:3000',
+#]
 
 ROOT_URLCONF = 'ApiHealthTech.urls'
 
@@ -104,7 +100,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ApiHealthTech.wsgi.application'
 
-
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+]
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
