@@ -6,10 +6,6 @@ from Apps.share.horarioMedico.views import HorarioMedicoView
 from Apps.share.paciente.viewsets import PacienteViewset
 from rest_framework import routers
 
-
-
-
-
 router = routers.DefaultRouter()
 
 #Registrar las rutas
