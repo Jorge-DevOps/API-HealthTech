@@ -56,6 +56,7 @@ SUB_APPS_DJANGO = [
     'Apps.usuario',
     'Apps.share.paciente',
     'Apps.horario',
+    'Apps.JoinUsuarios',
 ]
 THIRD_PARTY_APPS = [
     'rest_framework',

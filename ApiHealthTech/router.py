@@ -5,6 +5,7 @@ from Apps.share.consultorio.viewsets import ConsultorioViewset
 from Apps.share.horarioMedico.views import HorarioMedicoView
 from Apps.share.paciente.viewsets import PacienteViewset
 from Apps.horario.viewsets import HorarioViewset
+from Apps.JoinUsuarios.views import Jointableapi
 from rest_framework import routers
 
 
@@ -21,5 +22,6 @@ router.register('horarioMedico', HorarioMedicoView)
 router.register('administrador', AdministradorViewset)
 router.register('paciente', PacienteViewset)
 router.register('horario', HorarioViewset)
+router.register('usuarios',Jointableapi)
 # Localhost:p/api/medico/5
 # GET, POST, UPDATE , DELETE
