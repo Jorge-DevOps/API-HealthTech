@@ -12,7 +12,6 @@ from rest_framework import routers
 
 
 
-
 router = routers.DefaultRouter()
 
 #Registrar las rutas
@@ -25,5 +24,6 @@ router.register('paciente', PacienteViewset)
 router.register('horario', HorarioViewset)
 router.register('usuarios',Jointableapi)
 router.register('agenda',AgendaViewset)
+
 # Localhost:p/api/medico/5
 # GET, POST, UPDATE , DELETE
