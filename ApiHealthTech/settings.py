@@ -58,10 +58,12 @@ SUB_APPS_DJANGO = [
     'login',
     'Apps.horario',
     'Apps.JoinUsuarios',
+    'Apps.LoginUsuarios'
 ]
 THIRD_PARTY_APPS = [
     'rest_framework',
     'corsheaders',
+    'knox',
 ]
 
 INSTALLED_APPS = APPS_DJANGO + SUB_APPS_DJANGO + THIRD_PARTY_APPS
@@ -167,4 +169,14 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = 'https://healt-tech-back.herokuapp.com/api/horarioMedico/'
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        # 'rest_framework.authentication.BasicAuthentication',
+        # 'rest_framework.authentication.SessionAuthentication',
+        'knox.auth.TokenAuthentication',
+    ]
+}
+
+REST_KNOX = {
+  'USER_SERIALIZER': 'knox.serializers.UserSerializer',
+}

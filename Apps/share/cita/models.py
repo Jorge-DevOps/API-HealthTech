@@ -4,7 +4,7 @@ from django.db import models
 class Cita(models.Model):
     id_cita = models.AutoField(primary_key=True)
     id_agenda = models.ForeignKey(
-        Agenda, models.DO_NOTHING, db_column='id_agenda')
+        'Agenda', models.DO_NOTHING, db_column='id_agenda')
     id_usuario = models.ForeignKey(
         'Paciente', models.DO_NOTHING, db_column='id_usuario')
     fecha = models.DateField()
