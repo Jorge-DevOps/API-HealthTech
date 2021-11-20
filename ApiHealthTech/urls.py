@@ -8,5 +8,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^', include('Apps.usuario.urls')),
     path('api/', include(router.urls)),
-    path('api/Excel', viewsExcel.export_excel) 
+    path('api/Excel', viewsExcel.export_excel),
+    path('',include('Apps.LoginUsuarios.urls'))
 ]
