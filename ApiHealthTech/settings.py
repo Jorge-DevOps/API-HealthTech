@@ -56,6 +56,8 @@ SUB_APPS_DJANGO = [
     'Apps.usuario',
     'Apps.share.paciente',
     'login',
+    'Apps.horario',
+    'Apps.JoinUsuarios',
 ]
 THIRD_PARTY_APPS = [
     'rest_framework',
@@ -151,6 +153,10 @@ USE_L10N = True
 USE_TZ = True
 
 
+
+
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
@@ -160,3 +166,5 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = 'https://healt-tech-back.herokuapp.com/api/horarioMedico/'

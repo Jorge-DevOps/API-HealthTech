@@ -1,33 +1,25 @@
-from django.shortcuts import render , redirect
+from.serializers import SerializerLogin
+from.models import LoginModel, FormLogin
+from django.shortcuts import render
 from django.http import HttpResponse
-from django.contrib.auth.models import User, auth
-from django.contrib import messages
-from rest_framework import  viewsets
-from . import  serializers
-from . import models
-
+from rest_framework import serializers, viewsets
+from django.http import  JsonResponse
+from django.views import View
+from django.views.decorators.http import require_POST
 # Create your views here.
+from django.contrib.auth import authenticate, login
 
-def index(request):
-    queryset = models.horarioMedico.objects.all()
-    serializer_class = serializers.HorarioMedicoSerializer
-    
-    if request.method == 'POST':
-        form = models.LoginMedico(request.POST) 
-        userMedico = form.cleaned_data['user']
-        print('xd', userMedico)
-        if(userMedico == 'Medico'):
-            return HttpResponse('Es medico')
-        else:
-            return HttpResponse('No es medico')
+@require_POST
+def my_view(request):
+    print('POST', request.POST)
+    username = request.POST.get('username')
+    print('usuario', username)
+    password = request.POST.get('password')
+    print('contraseña', password)
+    user = authenticate(request, username=username, password=password)
+    print('user', user)
+    if user is not None:
+        login(request, user)
+        return HttpResponse('bien papu')
     else:
-        return HttpResponse('BIEN')
-
-
-def custom(request):
-    return render(request, 'custom.html')
-
-
-def home(request):
-    return render(request, 'home.html')
-
+        return HttpResponse('cagaste')

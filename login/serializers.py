@@ -1,7 +1,8 @@
+from django.db.models import fields
 from rest_framework import serializers
-from Apps.share.medico.models import medico
+from.models import LoginModel
 
-class LoginMedico(serializers.ModelSerializer):
+class SerializerLogin(serializers.ModelSerializer):
     class Meta:
-        model = medico
-        fields = '__all__'
+        model=LoginModel
+        fields=['id_usuario', 'tipo_documento', 'numero_documento', 'contrasena', 'id_perfil']
