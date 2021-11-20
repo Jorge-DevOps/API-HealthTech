@@ -1,5 +1,4 @@
 from rest_framework import  viewsets
-
 from Apps.LoginUsuarios.views import LoginAPI
 from . import models
 from . import  serializers
