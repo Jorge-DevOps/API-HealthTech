@@ -55,12 +55,15 @@ SUB_APPS_DJANGO = [
     'Apps.share.administrador',
     'Apps.usuario',
     'Apps.share.paciente',
+    'login',
     'Apps.horario',
     'Apps.JoinUsuarios',
+    'Apps.LoginUsuarios'
 ]
 THIRD_PARTY_APPS = [
     'rest_framework',
     'corsheaders',
+    'knox',
 ]
 
 INSTALLED_APPS = APPS_DJANGO + SUB_APPS_DJANGO + THIRD_PARTY_APPS
@@ -165,3 +168,15 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        # 'rest_framework.authentication.BasicAuthentication',
+        # 'rest_framework.authentication.SessionAuthentication',
+        'knox.auth.TokenAuthentication',
+    ]
+}
+
+REST_KNOX = {
+  'USER_SERIALIZER': 'knox.serializers.UserSerializer',
+}
