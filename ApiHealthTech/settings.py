@@ -55,6 +55,7 @@ SUB_APPS_DJANGO = [
     'Apps.share.administrador',
     'Apps.usuario',
     'Apps.share.paciente',
+    'login',
     'Apps.horario',
     'Apps.JoinUsuarios',
     'Apps.LoginUsuarios',
