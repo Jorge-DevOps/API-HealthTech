@@ -5,4 +5,4 @@ from.models import JoinTablesmodel
 class Jointableserializer(serializers.ModelSerializer):
     class Meta:
         model=JoinTablesmodel
-        fields=['id_usuario','tipo_documento','numero_documento','nombre_usuario','contrasena','correo','telefono','sexo','fecha_nacimiento','grupo_sanguineo','estrato','estado_civil','id_perfil']
+        fields=['id_usuario','tipo_documento','numero_documento','username','password','email','telefono','sexo','fecha_nacimiento','grupo_sanguineo','estrato','estado_civil','id_perfil']
