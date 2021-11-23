@@ -10,7 +10,7 @@ import xlwt
 class Jointableapi(viewsets.ModelViewSet):
     queryset=JoinTablesmodel.objects.raw('SELECT id_usuario, tipo_documento, numero_documento, username, password, email, telefono, sexo, fecha_nacimiento, grupo_sanguineo, estrato, estado_civil, id_perfil FROM  administrador UNION SELECT  id_usuario, tipo_documento, numero_documento, username, password, email, telefono, sexo, fecha_nacimiento, grupo_sanguineo, estrato, estado_civil, id_perfil FROM medico UNION SELECT  id_usuario, tipo_documento, numero_documento, username, password, email, telefono, sexo, fecha_nacimiento, grupo_sanguineo, estrato, estado_civil, id_perfil FROM paciente')
     serializer_class = Jointableserializer
-
+   
 
 
 def export_excel(request):
