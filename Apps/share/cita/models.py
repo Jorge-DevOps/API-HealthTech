@@ -18,6 +18,7 @@ class Cita(models.Model):
     fecha = models.DateField()
     id_horario = models.ForeignKey(
         horario, models.DO_NOTHING, db_column='id_horario')
+    estado = models.CharField(max_length=100)
     #medicos = models.ManyToManyField(Medico)
     class Meta:
         managed = False
