@@ -16,5 +16,6 @@ urlpatterns = [
     path('login/', views.my_view,  name="login"),
     path('api/Excel', viewsExcel.export_excel),
     path('',include('Apps.LoginUsuarios.urls')),
-    path('',include('Apps.share.cita.urls'))
+    path('',include('Apps.share.cita.urls')),
+    path('',include('Apps.share.medico.urls')),
 ]
