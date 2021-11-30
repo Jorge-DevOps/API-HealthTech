@@ -31,7 +31,7 @@ def export_excel(request):
       font_style=xlwt.XFStyle()
 
       with connection.cursor() as cursor:
-        cursor.execute("SELECT id_usuario, tipo_documento, numero_documento, nombre_usuario, contrasena, correo, telefono, sexo, fecha_nacimiento, grupo_sanguineo, estrato, estado_civil, id_perfil FROM  administrador UNION SELECT  id_usuario, tipo_documento, numero_documento, nombre_usuario, contrasena, correo, telefono, sexo, fecha_nacimiento, grupo_sanguineo, estrato, estado_civil, id_perfil FROM medico UNION SELECT  id_usuario, tipo_documento, numero_documento, nombre_usuario, contrasena, correo, telefono, sexo, fecha_nacimiento, grupo_sanguineo, estrato, estado_civil, id_perfil FROM paciente")
+        cursor.execute("SELECT id_usuario, tipo_documento, numero_documento, username, password, email, telefono, sexo, fecha_nacimiento, grupo_sanguineo, estrato, estado_civil, id_perfil FROM  administrador UNION SELECT  id_usuario, tipo_documento, numero_documento, username, password, email, telefono, sexo, fecha_nacimiento, grupo_sanguineo, estrato, estado_civil, id_perfil FROM medico UNION SELECT  id_usuario, tipo_documento, numero_documento, username, password, email, telefono, sexo, fecha_nacimiento, grupo_sanguineo, estrato, estado_civil, id_perfil FROM paciente")
         rawData = cursor.fetchall()
         result = []
         for r in rawData:
