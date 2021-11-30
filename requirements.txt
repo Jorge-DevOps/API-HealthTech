@@ -4,10 +4,12 @@ mysqlclient
 djangorestframework
 setuptools
 ConfigParser
+xlwt
 Pillow
 gunicorn
 mysql-connector-python
 gevent --pre
 auto-py-to-exe
 django-cors-headers
+django-rest-knox
 
