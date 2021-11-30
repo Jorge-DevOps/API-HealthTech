@@ -82,3 +82,28 @@ def export_informeCitas(request):
           ws.write(row_num,col_num,str(row[col_num]), font_style)
       wb.save(response)
       return response
+
+class Citas(KnoxLoginView):
+  def lista_citas(self, request, format=None) :
+    self.http_method_names.append("post")
+    form = self.form_class(request.POST)
+    if form.is_valid():
+      #dataRequestUsername=request.GET.get('username')
+      dataRequestUsername=request.data.get('username')
+      with connection.cursor() as cursor:
+        cursor.execute("""SELECT medico.username, cita.fecha, horario.hora_inicio, horario.hora_fin, consultorio.nombre
+                          FROM medico
+                          JOIN agenda ON (medico.id_agenda = agenda.id_agenda)
+                          JOIN consultorio ON(agenda.id_consultorio = consultorio.id_consultorio)
+                          JOIN cita ON (agenda.id_agenda = cita.id_agenda)
+                          JOIN horario ON (cita.id_horario = horario.id_horario)
+                          JOIN paciente ON (cita.id_usuario = paciente.id_usuario)
+                          WHERE paciente.email = %s""", [dataRequestUsername])
+        rawData = cursor.fetchall()
+        result = []
+        for p in rawData:
+            result.append(list(p))
+        response = HttpResponse(json.dumps(result, indent=4, sort_keys=True, default=str))
+        print(response)
+        print(result)
+        return response
