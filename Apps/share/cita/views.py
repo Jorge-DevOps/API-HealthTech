@@ -24,8 +24,9 @@ def traerMedicos(request):
         result.append(p.username)
     response = HttpResponse(json.dumps(result, indent=4),content_type='application/json')
     return response
+  
 from knox.views import LoginView as KnoxLoginView
-class HorariosDisponibles(KnoxLoginView):
+class HorariosDisponibles(UpdateView):
   
   permission_classes = (
         permissions.IsAuthenticatedOrReadOnly,
