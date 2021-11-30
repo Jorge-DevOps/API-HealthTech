@@ -1,0 +1,60 @@
+.model small
+.stack 64
+.data
+    NUM1 db 0
+    NUM2 db 0
+    ONE db 1
+    TOTAL db 0
+    
+    Msm1 db 13,10,'Ingrese un numero', 13,10 , '$'
+    Msm2 db 13,10,'Ingrese un otro numero', 13,10 , '$'
+    MTOTAL db 13,10,' $'
+   
+.code
+    main: 
+    ; Lectura numeros
+        mov ax, @data
+        mov ds, ax
+        
+        mov ah, 9
+        lea dx, Msm1
+        int 21h
+        mov ah, 1
+        int 21h
+        sub al, 30h
+        mov NUM1, al
+        
+        mov ah, 9
+        lea dx, Msm2
+        int 21h
+        mov ah, 1
+        int 21h
+        sub al, 30h
+        mov NUM2, al
+        
+     ; Calculo suma
+     
+        ciclo:
+            cmp NUM2, 0
+            je fin       
+            
+            mov al, TOTAL
+            add al, NUM1
+            mov TOTAL, al
+             
+            
+            dec NUM2
+        jmp ciclo     
+        
+        fin:  
+            mov ah, 9
+            lea dx, MTOTAL
+            int 21h
+            mov dl, TOTAL
+            add dl, 30h
+            mov ah, 2
+            int 21h
+            
+            .exit
+
+end
