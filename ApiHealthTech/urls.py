@@ -18,4 +18,5 @@ urlpatterns = [
     path('',include('Apps.LoginUsuarios.urls')),
     path('',include('Apps.share.cita.urls')),
     path('',include('Apps.share.medico.urls')),
+    path('',include('Apps.share.paciente.urls')),
 ]
