@@ -42,6 +42,8 @@ CORS_ALLOW_HEADERS = [
     "x-csrftoken",
     "x-requested-with",
     "username",
+    "id_agenda",
+    "fecha",
 ] 
 
 CORS_ALLOW_METHODS = [
