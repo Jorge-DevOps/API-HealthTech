@@ -9,6 +9,7 @@ from Apps.share.medico.models import Medico
 from Apps.horario.models import horario
 from Apps.agenda.models import Agenda
 import json
+from json import loads
 from django.views import View
 
 from rest_framework import permissions
@@ -27,30 +28,41 @@ def traerMedicos(request):
     return response
 
 
-class HorariosDisponibles(KnoxLoginView):
+def horariosDisponibles(request):
+
+  dic = loads(request.body)
+
+  idAgenda=dic['id_agenda']
+  dataRequestFecha=dic['fecha']
+
+  #with connection.cursor() as cursor:
+  #      cursor.execute("""SELECT agenda.id_agenda
+  #                        FROM agenda
+  #                        JOIN medico ON (agenda.id_agenda = medico.id_agenda)
+  #                        WHERE medico.email = %s""", [dataRequestUsername]
+  #                    )
+  #                  
+  #      result = dictfetchall(cursor)
   
-  permission_classes = (
-        permissions.IsAuthenticatedOrReadOnly,
-    )
-  permission_classes = (permissions.AllowAny,)
-  def post(self, request, format=None):
-    
-    self.http_method_names.append("post")
-    form = self.form_class(request.POST)
-    if form.is_valid():
-      dataRequestUsername=request.data.get('username')
-      dataRequestFecha=request.data.get('fecha')
-      print(dataRequestFecha)
-      queryAgenda=f"SELECT agenda.id_agenda FROM agenda, medico, usuario WHERE usuario.nombre_usuario = '{dataRequestUsername}' AND usuario.id_usuario = medico.id_usuario AND medico.id_agenda = agenda.id_agenda"
-      consultaAgenda=Agenda.objects.raw(queryAgenda)
-      
-      for p in consultaAgenda:
-            print("id_agenda: ",p.id_agenda)
-      
-      queryHorariosDisponibles=f"SELECT * FROM horario WHERE horario.id_horario NOT IN ( SELECT cita.id_horario FROM cita WHERE cita.fecha ={dataRequestFecha} AND cita.id_agenda ={p.id_agenda}"
-      response = HttpResponse(p,content_type='application/json')
-      #json.dumps(result, indent=4)    
-    return response
+  #idAgenda = result[0]['id_agenda']
+  
+  with connection.cursor() as cursor:
+        cursor.execute("""SELECT * 
+                          FROM horario 
+                          WHERE horario.id_horario NOT IN 
+                          ( 
+                          SELECT cita.id_horario 
+                          FROM cita 
+                          WHERE cita.fecha =%s AND 
+                          cita.id_agenda =%s
+                          )""", [dataRequestFecha, idAgenda]
+                      )
+                    
+        result = dictfetchall(cursor)
+
+  response = HttpResponse(json.dumps(result, indent=4, default=str),content_type='application/json')
+  
+  return response
 
 def export_informeCitas(request):
       response = HttpResponse(content_type='application/ms-excel')
@@ -115,30 +127,3 @@ def dictfetchall(cursor):
         dict(zip(columns, row))
         for row in cursor.fetchall()
     ]
-"""
-
-class Citas(KnoxLoginView):
-  def lista_citas(self, request, format=None) :
-    self.http_method_names.append("post")
-    form = self.form_class(request.POST)
-    if form.is_valid():
-      #dataRequestUsername=request.GET.get('username')
-      dataRequestUsername=request.data.get('username')
-      with connection.cursor() as cursor:
-        cursor.execute("SELECT medico.username, cita.fecha, horario.hora_inicio, horario.hora_fin, consultorio.nombre
-                          FROM medico
-                          JOIN agenda ON (medico.id_agenda = agenda.id_agenda)
-                          JOIN consultorio ON(agenda.id_consultorio = consultorio.id_consultorio)
-                          JOIN cita ON (agenda.id_agenda = cita.id_agenda)
-                          JOIN horario ON (cita.id_horario = horario.id_horario)
-                          JOIN paciente ON (cita.id_usuario = paciente.id_usuario)
-                          WHERE paciente.email = %s", [dataRequestUsername])
-        rawData = cursor.fetchall()
-        result = []
-        for p in rawData:
-            result.append(list(p))
-        response = HttpResponse(json.dumps(result, indent=4, sort_keys=True, default=str))
-        print(response)
-        print(result)
-        return response
-        """
