@@ -106,9 +106,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ApiHealthTech.wsgi.application'
 
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',
-]
+
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
@@ -170,6 +168,7 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+"""
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         #'rest_framework.authentication.BasicAuthentication',
@@ -182,6 +181,7 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAdminUser',
     ]
 }
+"""
 
 REST_KNOX = {
   'USER_SERIALIZER': 'knox.serializers.UserSerializer',
