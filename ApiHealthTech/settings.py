@@ -31,6 +31,28 @@ CORS_ORIGIN_ALLOW_ALL=True
 
 # Application definition
 
+CORS_ALLOW_HEADERS = [
+    "accept",
+    "accept-encoding",
+    "authorization",
+    "content-type",
+    "dnt",
+    "origin",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
+    "username",
+] 
+
+CORS_ALLOW_METHODS = [
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+]
+
 APPS_DJANGO = [
     'django.contrib.admin',
     'django.contrib.auth',
