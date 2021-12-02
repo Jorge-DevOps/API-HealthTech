@@ -9,5 +9,6 @@ urlpatterns = [
     path('api/cita/traerHorarios',viewsCitas.horariosDisponibles),
     path('api/informeCita',viewsInformeCitas.export_informeCitas),
     path('api/traerCita',viewsCitas.lista_citas),
+    path('api/cita/consultarIdPaciente',viewsCitas.consultarIdPaciente),
     #url(r'^api/cita/traerHorarios/(?P<pk>\d+)/$', HorariosDisponibles),
 ]

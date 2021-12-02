@@ -12,15 +12,30 @@ import json
 from json import loads
 from django.views import View
 
-from rest_framework import permissions
+from rest_framework import fields, permissions
 from django.views.generic.edit import UpdateView
 from knox.views import LoginView as KnoxLoginView
+
+from Apps.share.paciente.models import Paciente
 #from knox.views import LoginView as KnoxLoginView
 # Create your views here.
 
 def traerMedicos(request):
     consulta = list(Medico.objects.values('username', 'id_agenda'))
     response = HttpResponse(json.dumps(consulta, indent=4), content_type='application/json')
+    return response
+
+def consultarIdPaciente(request):
+    dic = loads(request.body)
+
+    dataRequestUsername=dic['username']
+    
+    paciente = Paciente.objects.get( email=dataRequestUsername )
+
+    result ={}
+    result["id_usuario"] = paciente.id_usuario
+    
+    response = HttpResponse(json.dumps(result, indent=4), content_type='application/json')
     return response
 
 
