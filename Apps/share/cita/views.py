@@ -19,12 +19,8 @@ from knox.views import LoginView as KnoxLoginView
 # Create your views here.
 
 def traerMedicos(request):
-    queryMedicos="SELECT  id_usuario, username, id_agenda FROM medico "
-    consulta=Medico.objects.raw(queryMedicos)
-    result = []
-    for p in consulta:
-        result.append(p.username)
-    response = HttpResponse(json.dumps(result, indent=4),content_type='application/json')
+    consulta = list(Medico.objects.values('username', 'id_agenda'))
+    response = HttpResponse(json.dumps(consulta, indent=4), content_type='application/json')
     return response
 
 
