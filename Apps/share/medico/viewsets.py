@@ -1,6 +1,8 @@
 from rest_framework import  viewsets
+from Apps.LoginUsuarios.views import LoginAPI
 from . import models
 from . import  serializers
+from Apps.LoginUsuarios import views as viewsLogin
 
 class MedicoViewset(viewsets.ModelViewSet):
     queryset = models.Medico.objects.all()
