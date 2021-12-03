@@ -86,14 +86,22 @@ def export_informeCitas(request):
       font_style=xlwt.XFStyle()
       font_style.font.bold =True
 
-      columns = ['id_cita','id_agenda','id_usuario','fecha','id_horario']
+      columns = ['paciente','tipo_documento','numero_documento','fecha_cita','estado','hora_inicio','hora_fin','medico','consultorio']
 
       for col_num in range(len(columns)):
         ws.write(row_num,col_num,columns[col_num], font_style)
       font_style=xlwt.XFStyle()
 
       with connection.cursor() as cursor:
-        cursor.execute("SELECT id_cita, id_agenda, id_usuario, fecha, id_horario FROM  cita ")
+        cursor.execute("""SELECT 
+                            paciente.username AS paciente, paciente.tipo_documento, paciente.numero_documento, cita.fecha AS fecha_cita, cita.estado, horario.hora_inicio, 
+                            horario.hora_fin, medico.username AS medico, consultorio.nombre AS consultorio
+                          FROM paciente
+                          JOIN cita ON (paciente.id_usuario = cita.id_usuario)
+                          JOIN horario ON (cita.id_horario = horario.id_horario)
+                          JOIN agenda ON (cita.id_agenda = agenda.id_agenda)
+                          JOIN medico ON (agenda.id_agenda = medico.id_agenda)
+                          JOIN consultorio ON (agenda.id_consultorio = consultorio.id_consultorio)""")
         rawData = cursor.fetchall()
         result = []
         for r in rawData:
